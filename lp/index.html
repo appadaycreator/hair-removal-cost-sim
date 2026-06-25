@@ -51,7 +51,7 @@ img{max-width:100%;display:block;}
 /* Hero */
 .hero{position:relative;min-height:600px;display:flex;align-items:center;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;background-image:url('../assets/photos/photo_01.jpg');background-size:cover;background-position:center top;}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(255,107,157,0.85) 0%,rgba(255,107,157,0.6) 45%,rgba(0,0,0,0.2) 100%);}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(255,107,157,0.78) 0%,rgba(255,107,157,0.42) 48%,rgba(255,150,190,0.12) 100%);}
 .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:80px 24px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;width:100%;}
 .hero-text{}
 .hero-badge{display:inline-block;background:var(--amber);color:#333;font-size:.75rem;font-weight:800;padding:4px 12px;border-radius:20px;margin-bottom:16px;letter-spacing:.05em;}
@@ -63,8 +63,8 @@ img{max-width:100%;display:block;}
 .hero-trust{display:flex;gap:16px;margin-top:20px;flex-wrap:wrap;}
 .hero-trust-item{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.25);backdrop-filter:blur(4px);padding:6px 14px;border-radius:20px;font-size:.8rem;color:#fff;font-weight:600;}
 .hero-photos{position:relative;height:460px;}
-.hero-photo-main{position:absolute;right:0;top:0;width:58%;height:380px;object-fit:cover;border-radius:20px 20px 0 20px;box-shadow:0 12px 40px rgba(0,0,0,.25);}
-.hero-photo-sub{position:absolute;left:0;bottom:0;width:52%;height:280px;object-fit:cover;border-radius:0 20px 20px 20px;box-shadow:0 8px 28px rgba(0,0,0,.2);border:4px solid #fff;}
+.hero-photo-main{position:absolute;right:0;top:0;width:63%;height:420px;object-fit:cover;border-radius:20px 20px 0 20px;box-shadow:0 16px 48px rgba(0,0,0,.3);}
+.hero-photo-sub{position:absolute;left:-10px;bottom:0;width:56%;height:300px;object-fit:cover;border-radius:0 20px 20px 20px;box-shadow:0 10px 32px rgba(0,0,0,.22);border:4px solid #fff;}
 .hero-stat{position:absolute;top:50%;right:-10px;transform:translateY(-50%);background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 8px 24px rgba(0,0,0,.15);text-align:center;}
 .hero-stat-num{font-size:1.5rem;font-weight:900;color:var(--pink);}
 .hero-stat-label{font-size:.72rem;color:#888;margin-top:2px;}
@@ -187,6 +187,30 @@ section{padding:72px 0;}
 .final-cta-btn:hover{transform:translateY(-4px);}
 .final-cta-trust{display:flex;justify-content:center;gap:24px;margin-top:24px;flex-wrap:wrap;}
 .final-cta-trust-item{color:rgba(255,255,255,.9);font-size:.85rem;font-weight:600;display:flex;align-items:center;gap:6px;}
+
+/* Simulation Sample Section */
+.sim-sample{background:#fff;}
+.sim-sample-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px;}
+.sim-sample-card{background:var(--gray-light);border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07);transition:transform .2s,box-shadow .2s;}
+.sim-sample-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(255,107,157,.15);}
+.sim-sample-photo{width:100%;height:190px;object-fit:cover;}
+.sim-sample-body{padding:22px;}
+.sim-sample-label{font-size:.85rem;font-weight:700;color:#777;margin-bottom:10px;}
+.sim-sample-price{font-size:2.4rem;font-weight:900;color:var(--pink);line-height:1;margin-bottom:6px;}
+.sim-sample-price.esthetic{color:#9c59a8;}
+.sim-sample-monthly{font-size:.85rem;color:#555;margin-bottom:14px;}
+.sim-sample-monthly strong{color:var(--dark);font-size:.95rem;}
+.saving-badge{display:inline-block;background:rgba(255,193,7,.22);color:#b07800;font-size:.78rem;font-weight:800;padding:5px 14px;border-radius:20px;border:1.5px solid rgba(255,193,7,.45);}
+@media(max-width:768px){.sim-sample-grid{grid-template-columns:1fr;}}
+
+/* Cost highlight band */
+.cost-highlight{background:linear-gradient(135deg,var(--pink-light),#fff8e1);border-top:3px solid var(--pink);border-bottom:3px solid var(--amber);padding:36px 0;}
+.cost-highlight-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center;}
+.cost-highlight-item{background:#fff;border-radius:16px;padding:20px 12px;box-shadow:0 4px 16px rgba(0,0,0,.06);}
+.cost-highlight-item .num{font-size:1.9rem;font-weight:900;color:var(--pink);display:block;}
+.cost-highlight-item .num.amber{color:#c87800;}
+.cost-highlight-item .label{font-size:.78rem;color:#666;margin-top:4px;}
+@media(max-width:768px){.cost-highlight-inner{grid-template-columns:repeat(2,1fr);}}
 
 /* Footer */
 .footer{background:#222;color:#aaa;padding:32px 24px;text-align:center;font-size:.8rem;line-height:2;}
@@ -439,6 +463,69 @@ section{padding:72px 0;}
   </div>
 </section>
 
+<!-- Simulation Sample Section -->
+<section class="sim-sample">
+  <div class="section-inner">
+    <div class="section-tag">計算してみると…</div>
+    <h2 class="section-title">こんな<span>金額</span>が1分でわかる</h2>
+    <p class="section-sub">部位・回数・割引を選ぶだけ。あなたに合った費用を即試算できます。</p>
+    <div class="sim-sample-grid">
+      <div class="sim-sample-card">
+        <img src="../assets/photos/photo_10.jpg" alt="医療脱毛 全身イメージ" class="sim-sample-photo">
+        <div class="sim-sample-body">
+          <div class="sim-sample-label">🏥 医療脱毛 全身5回</div>
+          <div class="sim-sample-price">¥198,400</div>
+          <div class="sim-sample-monthly">月々 <strong>¥5,511</strong>（36回払い）</div>
+          <span class="saving-badge">学割20%OFF → ¥158,720</span>
+        </div>
+      </div>
+      <div class="sim-sample-card">
+        <img src="../assets/photos/photo_11.jpg" alt="光脱毛 全身イメージ" class="sim-sample-photo">
+        <div class="sim-sample-body">
+          <div class="sim-sample-label">💅 光脱毛 全身12回</div>
+          <div class="sim-sample-price esthetic">¥159,800</div>
+          <div class="sim-sample-monthly">月々 <strong>¥4,438</strong>（36回払い）</div>
+          <span class="saving-badge">乗り換え割 → ¥129,800</span>
+        </div>
+      </div>
+      <div class="sim-sample-card">
+        <img src="../assets/photos/photo_12.jpg" alt="部分脱毛 VIO+脚" class="sim-sample-photo">
+        <div class="sim-sample-body">
+          <div class="sim-sample-label">✨ 医療 VIO+脚 5回</div>
+          <div class="sim-sample-price">¥89,600</div>
+          <div class="sim-sample-monthly">月々 <strong>¥2,488</strong>（36回払い）</div>
+          <span class="saving-badge">平日割10%OFF → ¥80,640</span>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px;">
+      <a href="../" class="hero-cta-btn" style="display:inline-block;">自分の費用を無料で計算する →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Cost Highlight Band -->
+<div class="cost-highlight">
+  <div class="cost-highlight-inner">
+    <div class="cost-highlight-item">
+      <span class="num">¥25万〜</span>
+      <div class="label">全身医療脱毛の相場</div>
+    </div>
+    <div class="cost-highlight-item">
+      <span class="num">¥15万〜</span>
+      <div class="label">全身光脱毛の相場</div>
+    </div>
+    <div class="cost-highlight-item">
+      <span class="num amber">最大30%</span>
+      <div class="label">割引で節約できる</div>
+    </div>
+    <div class="cost-highlight-item">
+      <span class="num">月々¥4,000〜</span>
+      <div class="label">36回払いの月額目安</div>
+    </div>
+  </div>
+</div>
+
 <!-- Photo Gallery -->
 <div class="gallery">
   <div class="gallery-track">
@@ -505,6 +592,22 @@ section{padding:72px 0;}
         </tr>
       </tbody>
     </table>
+    <div style="margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      <div style="border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(255,107,157,.12);position:relative;">
+        <img src="../assets/photos/photo_13.jpg" alt="医療脱毛クリニック" style="width:100%;height:220px;object-fit:cover;display:block;">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(255,107,157,.85));padding:16px 20px;">
+          <div style="color:#fff;font-weight:800;font-size:1rem;">🏥 医療脱毛クリニック</div>
+          <div style="color:rgba(255,255,255,.9);font-size:.82rem;margin-top:4px;">医師・看護師が施術。永久脱毛効果。</div>
+        </div>
+      </div>
+      <div style="border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(107,57,157,.1);position:relative;">
+        <img src="../assets/photos/photo_14.jpg" alt="エステサロン" style="width:100%;height:220px;object-fit:cover;display:block;">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(107,57,157,.75));padding:16px 20px;">
+          <div style="color:#fff;font-weight:800;font-size:1rem;">💅 光脱毛サロン</div>
+          <div style="color:rgba(255,255,255,.9);font-size:.82rem;margin-top:4px;">リーズナブルに通えるエステ脱毛。</div>
+        </div>
+      </div>
+    </div>
     <div style="text-align:center;margin-top:32px;">
       <a href="../" class="hero-cta-btn" style="display:inline-block;">自分の費用を無料で計算する →</a>
     </div>
@@ -521,14 +624,16 @@ section{padding:72px 0;}
         <img src="../assets/photos/photo_04.jpg" alt="学割・平日割" class="discount-photo">
         <div class="discount-tag">学割</div>
         <div class="discount-title">学割・平日割</div>
-        <div class="discount-amount">最大20%OFF</div>
+        <div class="discount-amount" style="color:var(--amber-dark)">最大20%OFF</div>
+        <div style="background:rgba(255,193,7,.15);border-radius:8px;padding:6px 10px;margin:6px 0;font-size:.82rem;font-weight:800;color:#b07800;">¥39,680 節約できる！</div>
         <p class="discount-text">学生証提示や平日限定の割引で費用を大幅カット。シミュレーターで割引後の金額も確認できます。</p>
       </div>
       <div class="discount-card">
         <img src="../assets/photos/photo_05.jpg" alt="乗り換え割引" class="discount-photo">
         <div class="discount-tag">乗り換え割</div>
         <div class="discount-title">乗り換え割引</div>
-        <div class="discount-amount">最大3万円OFF</div>
+        <div class="discount-amount" style="color:var(--amber-dark)">最大3万円OFF</div>
+        <div style="background:rgba(255,193,7,.15);border-radius:8px;padding:6px 10px;margin:6px 0;font-size:.82rem;font-weight:800;color:#b07800;">¥30,000 節約できる！</div>
         <p class="discount-text">他院・他サロンからの乗り換えで大幅割引になるクリニックも。カウンセリングで確認を。</p>
       </div>
       <div class="discount-card">
@@ -536,6 +641,7 @@ section{padding:72px 0;}
         <div class="discount-tag">無料体験</div>
         <div class="discount-title">無料カウンセリング</div>
         <div class="discount-amount">0円〜</div>
+        <div style="background:var(--pink-light);border-radius:8px;padding:6px 10px;margin:6px 0;font-size:.82rem;font-weight:800;color:var(--pink);">カウンセリングで正確な費用を確認</div>
         <p class="discount-text">多くのクリニック・サロンが無料カウンセリングを実施。まず相談して正確な費用を確認。</p>
       </div>
     </div>
