@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div id="test-container">テスト開始...</div>
+<script>
+  // HTMLをfetchしてテスト
+  fetch('index.html')
+    .then(r => r.text())
+    .then(html => {
+      const tests = {
+        'グリッドCSS': html.includes('grid-template-columns'),
+        'ミニFAQ': html.includes('このツールについて'),
+        'トースト関数': html.includes('showToast'),
+        'r-period': html.includes('r-period'),
+        'r-count': html.includes('r-count'),
+      };
+      
+      let pass = 0, fail = 0;
+      for (let t in tests) {
+        tests[t] ? pass++ : fail++;
+      }
+      
+      document.getElementById('test-container').innerHTML = 
+        `<h2>実装テスト結果</h2>` +
+        Object.entries(tests).map(([k,v]) => 
+          `<p>${v ? '✓' : '✗'} ${k}</p>`
+        ).join('') +
+        `<p>合計: ${pass}/${pass+fail}</p>`;
+    });
+</script>
+</body>
+</html>
